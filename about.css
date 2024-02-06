@@ -1,0 +1,55 @@
+/* 
+
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape 
+
+*/
+
+.main-container {
+  margin: 3rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.grid-container-one {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  gap: 10rem;
+  justify-content: space-between;
+}
+
+.heading-about {
+  color: #7843e9;
+}
+
+.about-text-grey {
+  color: #333;
+}
+
+.main-about {
+  padding-top: 5rem;
+}
+
+.grid-container-two {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+@media (max-width: 600px) and (max-width: 900px) {
+  .grid-container-two {
+    /* grid-template-columns: repeat(2fr, 1fr); */
+  }
+}
+
+.grid-container-two > div {
+  padding: 10px;
+  color: #666666;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-radius: 7px;
+  text-align: center;
+}
