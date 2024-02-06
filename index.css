@@ -1,19 +1,16 @@
-.section-two-image {
-  background-position: bottom right;
-  width: 500px;
-  height: auto;
+.container-wrapper {
+  display: flex;
 }
-
+.section-two-image {
+  /* background-position: bottom right; */
+  width: 500px;
+}
 .section-one-name {
-  color: #3a0ca3;
+  color: #7843e9;
 }
 
 .section-one-page {
   color: #333333;
-}
-
-.container-wrapper {
-  display: flex;
 }
 
 .section-one-buttons {
@@ -26,10 +23,9 @@
 
 .btn {
   padding: 0.5rem 2rem;
-  cursor: pointer;
 }
 .btn-primary {
-  border: 2px solid #3a0ca3;
+  border: 2px solid #7843e9;
   border-radius: 5px;
   background-color: #fff;
   margin-right: 0.5rem;
@@ -40,9 +36,9 @@
 }
 
 .btn-secondary {
-  border: 2px solid #3a0ca3;
+  border: 2px solid #7843e9;
   border-radius: 5px;
-  background-color: #3a0ca3;
+  background-color: #7843e9;
   color: white;
   box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
     0 4px 20px 0 rgba(0, 0, 0, 0.19);
@@ -63,6 +59,6 @@
     display: none;
   }
   .container {
-    margin: 1.5rem;
+    margin: 1rem;
   }
 }
