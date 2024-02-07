@@ -2,7 +2,6 @@
   display: flex;
 }
 .section-two-image {
-  /* background-position: bottom right; */
   width: 500px;
 }
 .section-one-name {
@@ -45,11 +44,11 @@
   font-size: large;
 }
 
-.section-one-icons {
+.icons-wrapper {
   margin-top: 3rem;
 }
 
-.section-one-icons .icon {
+.icon {
   width: 40px;
   margin-right: 1rem;
 }

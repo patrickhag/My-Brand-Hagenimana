@@ -1,0 +1,21 @@
+footer {
+  background-color: #141313;
+  color: #fff;
+  text-align: center;
+  font-size: medium;
+  padding: 1rem;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin-left: 0.5rem;
+}
+
+.footer-name {
+  font-weight: 700;
+  text-decoration: underline;
+}

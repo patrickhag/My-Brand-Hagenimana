@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My brand - Homepage</title>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./about.css" />
+    <link rel="stylesheet" href="./projects.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
   <body>
     <header class="main-header">
@@ -19,14 +24,15 @@
         <nav class="main-nav">
           <ul>
             <li><a href="#about">ABOUT</a></li>
-            <li><a href="./about.html">PORTFOLIO</a></li>
-            <li><a href="./about.html">CONTACT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="./#contact">CONTACT</a></li>
             <li><a href="./about.html">BLOG</a></li>
+            <li><i class="fas fa-sun"></i></li>
           </ul>
         </nav>
       </div>
     </header>
-    <section class="container">
+    <section class="container" id="home">
       <div class="container-wrapper">
         <div class="section-one">
           <h1 class="section-one-name">👋 Hey, I’m Patrick Hagenimana</h1>
@@ -45,7 +51,7 @@
               ><button class="btn btn-secondary">Projects</button></a
             >
           </div>
-          <div class="section-one-icons">
+          <div class="icons-wrapper">
             <a href="https://www.github.com/patrickhag" target="_blank"
               ><img class="icon" src="./images/github_icon.png" alt=""
             /></a>
@@ -76,14 +82,14 @@
         </div>
       </div>
     </section>
-    <main class="main-container" id="about">
-      <div class="main-about">
+    <main class="main-container">
+      <div class="main-container-child" id="about">
         <h1 class="center">ABOUT ME</h1>
         <p class="center about-text-grey">
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology.
         </p>
-        <div class="grid-container-one">
+        <div class="grid-container">
           <div>
             <h1 class="heading-about">Get to know me!</h1>
             <p class="about-text-grey">
@@ -121,6 +127,111 @@
           </div>
         </div>
       </div>
+
+      <div class="main-container-child" id="projects">
+        <h1 class="center">PROJECTS</h1>
+        <p class="center about-text-grey">
+          Here you will find some of the personal project that I created with
+          their live preview and source code.
+        </p>
+        <div class="project-wrapper">
+          <div class="project-wrapper-image">
+            <img
+              src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-4.jpg"
+              alt="Image shows athletes"
+            />
+          </div>
+          <div class="project-wrapper-content">
+            <h4>Sports tracker</h4>
+            <p class="about-text-grey">
+              I love sports. I love to track my progress. With this sports
+              tracker app, you can easily track your progress and unlock
+              achievements.
+            </p>
+            <button class="btn btn-secondary">Visit</button>
+          </div>
+        </div>
+        <div class="project-wrapper">
+          <div class="project-wrapper-image">
+            <img
+              src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-2.jpg"
+              alt="Image shows notebook"
+            />
+          </div>
+          <div class="project-wrapper-content">
+            <h4>Todo app</h4>
+            <p class="about-text-grey">
+              Having goals is a must in every day life. This is why I created
+              this Todo app that I use every workday to plan my tasks ahead.
+            </p>
+            <button class="btn btn-secondary">Visit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-container-child" id="contact">
+        <h1 class="center">CONTACT</h1>
+        <p class="center">
+          Feel free to Contact me by submitting the form below or reach out to
+          me to my socials.
+        </p>
+        <div class="contact-wrapper">
+          <div>
+            <h5>Mobile</h5>
+            <p><i class="fa fa-phone"></i><span> +250788497933</span></p>
+            <h5>E-mail</h5>
+            <p>
+              <i class="fa fa-envelope"></i><span> patrickhag09@gmail.com</span>
+            </p>
+            <h5>Social media</h5>
+            <div>
+              <a href="mailto:patrickhag09@gmail.com" target="_blank"
+                ><img class="icon" src="./images/mail_icon.png" alt=""
+              /></a>
+              <a href="https://www.github.com/patrickhag" target="_blank"
+                ><img class="icon" src="./images/linkedin_icon.png" alt=""
+              /></a>
+              <a href="https://www.github.com/patrickhag" target="_blank"
+                ><img class="icon" src="./images/twitter_icon.png" alt=""
+              /></a>
+            </div>
+          </div>
+          <div>
+            <form action="#">
+              <p><input type="text" placeholder="Your name" /></p>
+              <p><input type="text" placeholder="Your phone" /></p>
+              <p><input type="email" placeholder="Your email" /></p>
+              <p>
+                <textarea
+                  cols="27"
+                  rows="5"
+                  placeholder="Your message"
+                ></textarea>
+              </p>
+              <button class="btn btn-secondary">SEND</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
+    <footer>
+      <ul>
+        <li><a href="#home">Home |</a></li>
+        <li><a href="#about">About |</a></li>
+        <li><a href="#projects">Projects |</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p>
+        <span><i class="fab fa-twitter"></i> &#183;</span>
+        <span><i class="fab fa-linkedin"></i> &#183;</span>
+        <span><i class="fas fa-envelope-open"></i></span>
+      </p>
+      <p>
+        &copy; Copyright 2024. Made by
+        <span class="footer-name">
+          <a href="./index.html"> Patrick Hagenimana</a></span
+        >
+      </p>
+    </footer>
   </body>
 </html>
