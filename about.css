@@ -14,10 +14,10 @@
   text-align: center;
 }
 
-.grid-container-one {
+.grid-container {
   display: grid;
   grid-template-columns: 500px 500px;
-  gap: 10rem;
+  /* gap: 10rem; */
   justify-content: space-between;
 }
 
@@ -29,20 +29,19 @@
   color: #333;
 }
 
-.main-about {
+.main-container-child {
   padding-top: 5rem;
 }
 
 .grid-container-two {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  padding: 10px;
   gap: 10px;
 }
 
-@media (max-width: 600px) and (max-width: 900px) {
-  .grid-container-two {
-    /* grid-template-columns: repeat(2fr, 1fr); */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
