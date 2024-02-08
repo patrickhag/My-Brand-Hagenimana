@@ -1,3 +1,11 @@
+/* 
+
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
+
 footer {
   background-color: #141313;
   color: #fff;

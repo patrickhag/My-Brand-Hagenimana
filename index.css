@@ -1,8 +1,15 @@
+/* 
+  481px - 767px = extra small device
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
 .container-wrapper {
   display: flex;
 }
 .section-two-image {
-  width: 500px;
+  width: 31.25rem;
 }
 .section-one-name {
   color: #7843e9;
@@ -23,6 +30,7 @@
 .btn {
   padding: 0.5rem 2rem;
 }
+
 .btn-primary {
   border: 2px solid #7843e9;
   border-radius: 5px;
@@ -53,11 +61,28 @@
   margin-right: 1rem;
 }
 
-@media (max-width: 700px) {
+.section-two-image-sc {
+  display: none;
+}
+
+@media (max-width: 37.5rem) {
+  .container {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 48rem) {
   .section-two-image {
     display: none;
   }
-  .container {
-    margin: 1rem;
+  .container-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .section-two-image-sc {
+    display: block;
+    border: 2px solid #141313;
+    border-radius: 50%;
+    width: 4.375rem;
   }
 }
