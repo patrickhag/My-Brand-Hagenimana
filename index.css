@@ -1,5 +1,4 @@
 /* 
-  481px - 767px = extra small device
   0 - 600px = 37.5rem:      Phone
   600 - 768px = 48rem:    Tablet portrait
   900 - 1200px = 75rem:   Tablet landscape 
@@ -11,7 +10,8 @@
 .section-two-image {
   width: 31.25rem;
 }
-.section-one-name {
+
+.text-purple {
   color: #7843e9;
 }
 
