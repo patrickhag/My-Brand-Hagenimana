@@ -7,7 +7,8 @@
 
 .main-container {
   margin: 2rem auto;
-  width: 70%;
+  width: 80%;
+  max-width: 900px;
 }
 
 hr {
@@ -16,10 +17,6 @@ hr {
 
 .fa-margin {
   margin-right: 0.5rem;
-}
-
-.vertical-line {
-  opacity: 0.2;
 }
 
 /* tablet view */

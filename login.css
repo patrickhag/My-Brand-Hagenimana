@@ -1,0 +1,24 @@
+.main-container-login {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-wrapper form {
+  width: 27rem;
+  border: 2px solid #7843e9;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.login-form-wrapper input {
+  width: 100%;
+}
+
+.login-form-wrapper button {
+  margin: 0.7rem 0;
+}
+
+@media (max-width: 63.75rem) {
+}

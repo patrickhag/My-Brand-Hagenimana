@@ -11,10 +11,6 @@
   width: 31.25rem;
 }
 
-.text-purple {
-  color: #7843e9;
-}
-
 .section-one-page {
   color: #333333;
 }
@@ -25,31 +21,6 @@
 
 .section-one-buttons {
   margin-top: 2.5rem;
-}
-
-.btn {
-  padding: 0.5rem 2rem;
-}
-
-.btn-primary {
-  border: 2px solid #7843e9;
-  border-radius: 5px;
-  background-color: #fff;
-  margin-right: 0.5rem;
-  box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
-    0 4px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: transform 0.3s;
-  font-size: large;
-}
-
-.btn-secondary {
-  border: 2px solid #7843e9;
-  border-radius: 5px;
-  background-color: #7843e9;
-  color: white;
-  box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
-    0 4px 20px 0 rgba(0, 0, 0, 0.19);
-  font-size: large;
 }
 
 .icons-wrapper {
@@ -71,7 +42,10 @@
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 61.93rem) {
+  .container {
+    margin: 2rem;
+  }
   .section-two-image {
     display: none;
   }
