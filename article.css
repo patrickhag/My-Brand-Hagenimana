@@ -1,0 +1,46 @@
+/* 
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
+
+.articles-cover {
+  width: 95%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.center {
+  text-align: center;
+}
+
+.left-icons ul {
+  left: 1rem;
+  position: fixed;
+  z-index: 999;
+  top: 40%;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+ul li {
+  padding: 0.3rem;
+}
+
+@media (max-width: 48rem) {
+  .left-icons ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    left: 40%;
+    z-index: 1000;
+    top: 80%;
+    background-color: #fff;
+  }
+  ul li:nth-child(1) {
+    padding-right: 2rem;
+  }
+}

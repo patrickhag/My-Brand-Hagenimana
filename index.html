@@ -26,28 +26,29 @@
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#projects">PROJECTS</a></li>
             <li><a href="./#contact">CONTACT</a></li>
-            <li><a href="./about.html">BLOG</a></li>
+            <li><a href="./blog.html">BLOG</a></li>
             <li><i class="fas fa-sun"></i></li>
           </ul>
+          <div><i class="fas fa-bars"></i></div>
         </nav>
       </div>
     </header>
     <section class="container" id="home">
       <div class="container-wrapper">
         <div class="section-one">
-          <h1 class="section-one-name">👋 Hey, I’m Patrick Hagenimana</h1>
+          <h1 class="text-purple">👋 Hey, I’m Patrick Hagenimana</h1>
           <h1>Welcome to my portfolio website</h1>
           <p class="section-one-page">
             "I'm a budding full-stack web developer with a passion for creating
             awesome online experiences. I may not have a ton of experience yet,
-            but I'm eager to learn and bring fresh ideas to life. Let's build
+            but I'm eager to eager and bring fresh ideas to life. Let's build
             something great together!"
           </p>
           <div class="section-one-buttons">
-            <a href="./contact.html"
+            <a href="#contact"
               ><button class="btn btn-primary">Hire me</button></a
             >
-            <a href="./projects.html"
+            <a href="#projects"
               ><button class="btn btn-secondary">Projects</button></a
             >
           </div>
@@ -80,25 +81,32 @@
             />
           </div>
         </div>
+        <div>
+          <img
+            src="./images/yyny4b-min.jpg"
+            alt="Patrick's profile picture"
+            class="section-two-image-sc"
+          />
+        </div>
       </div>
     </section>
     <main class="main-container">
       <div class="main-container-child" id="about">
         <h1 class="center">ABOUT ME</h1>
-        <p class="center about-text-grey">
+        <p class="center text-grey">
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology.
         </p>
         <div class="grid-container">
-          <div>
+          <div class="grid-container-child">
             <h1 class="heading-about">Get to know me!</h1>
-            <p class="about-text-grey">
+            <p class="text-grey">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
               vitae tempus quam pellentesque. Commodo quis imperdiet massa
               tincidunt nunc pulvinar sapien et.
             </p>
-            <p class="about-text-grey">
+            <p class="text-grey">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
               vitae tempus quam pellentesque.
@@ -130,7 +138,7 @@
 
       <div class="main-container-child" id="projects">
         <h1 class="center">PROJECTS</h1>
-        <p class="center about-text-grey">
+        <p class="center text-grey">
           Here you will find some of the personal project that I created with
           their live preview and source code.
         </p>
@@ -143,7 +151,7 @@
           </div>
           <div class="project-wrapper-content">
             <h4>Sports tracker</h4>
-            <p class="about-text-grey">
+            <p class="text-grey">
               I love sports. I love to track my progress. With this sports
               tracker app, you can easily track your progress and unlock
               achievements.
@@ -160,7 +168,7 @@
           </div>
           <div class="project-wrapper-content">
             <h4>Todo app</h4>
-            <p class="about-text-grey">
+            <p class="text-grey">
               Having goals is a must in every day life. This is why I created
               this Todo app that I use every workday to plan my tasks ahead.
             </p>
@@ -216,10 +224,10 @@
     </main>
     <footer>
       <ul>
-        <li><a href="#home">Home |</a></li>
-        <li><a href="#about">About |</a></li>
-        <li><a href="#projects">Projects |</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="footer-link" href="#home">Home |</a></li>
+        <li><a class="footer-link" href="#about">About |</a></li>
+        <li><a class="footer-link" href="#projects">Projects |</a></li>
+        <li><a class="footer-link" href="#contact">Contact</a></li>
       </ul>
       <p>
         <span><i class="fab fa-twitter"></i> &#183;</span>
@@ -227,9 +235,11 @@
         <span><i class="fas fa-envelope-open"></i></span>
       </p>
       <p>
-        &copy; Copyright 2024. Made by
+        &copy; Copyright 2024. Created by
         <span class="footer-name">
-          <a href="./index.html"> Patrick Hagenimana</a></span
+          <a class="footer-link" href="./index.html">
+            Patrick Hagenimana</a
+          ></span
         >
       </p>
     </footer>

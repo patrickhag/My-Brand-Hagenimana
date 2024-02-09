@@ -1,0 +1,38 @@
+/* 
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
+
+.main-container {
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 900px;
+}
+
+hr {
+  opacity: 1;
+}
+
+.fa-margin {
+  margin-right: 0.5rem;
+}
+
+/* tablet view */
+@media (max-width: 37.5rem) {
+  .main-container {
+    margin: 1rem;
+  }
+}
+
+/* phone view */
+@media (max-width: 37.5rem) {
+  .main-container {
+    margin: 1rem;
+    width: 100%;
+  }
+  .project-wrapper-image {
+    display: none;
+  }
+}
