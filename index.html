@@ -9,11 +9,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./about.css" />
-    <link rel="stylesheet" href="./projects.css" />
-    <link rel="stylesheet" href="./footer.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
   </head>
   <body>
     <header class="main-header">
@@ -25,15 +26,15 @@
           <ul>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="./#contact">CONTACT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
             <li><a href="./blog.html">BLOG</a></li>
-            <li><i class="fas fa-sun"></i></li>
+            <li><i class="fas fa-moon"></i></li>
           </ul>
           <div><i class="fas fa-bars"></i></div>
         </nav>
       </div>
     </header>
-    <section class="container" id="home">
+    <section class="container background-with-img" id="home">
       <div class="container-wrapper">
         <div class="section-one">
           <h1 class="text-purple">👋 Hey, I’m Patrick Hagenimana</h1>
@@ -75,7 +76,7 @@
         <div class="section-two">
           <div>
             <img
-              src="./images/yyny4b-PhotoRoom.png-PhotoRoom(1).png"
+              src="./images/blog-owners-image.png"
               alt="Patrick's profile picture"
               class="section-two-image"
             />
@@ -90,138 +91,135 @@
         </div>
       </div>
     </section>
-    <main class="main-container">
-      <div class="main-container-child" id="about">
-        <h1 class="center">ABOUT ME</h1>
-        <p class="center text-grey">
-          Here you will find more information about me, what I do, and my
-          current skills mostly in terms of programming and technology.
-        </p>
-        <div class="grid-container">
-          <div class="grid-container-child">
-            <h1 class="heading-about">Get to know me!</h1>
-            <p class="text-grey">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
-              vitae tempus quam pellentesque. Commodo quis imperdiet massa
-              tincidunt nunc pulvinar sapien et.
-            </p>
-            <p class="text-grey">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
-              vitae tempus quam pellentesque.
-            </p>
-          </div>
-          <div>
-            <h1 class="heading-about">My skills</h1>
-            <div class="grid-container-two">
-              <div>HTML</div>
-              <div>CSS</div>
-              <div>JavaScript</div>
-              <div>GIT</div>
-              <div>GitHub</div>
-              <div>React.JS</div>
-              <div>Node.JS</div>
-              <div>MongoDB</div>
-              <div>SQL</div>
-              <div>Postgres</div>
-              <div>Terminal</div>
-              <div>Python</div>
-              <div>TypeScript</div>
-              <div>GraphQL</div>
-              <div>Figma</div>
-              <div>Java</div>
-            </div>
+    <section class="main-container background-without-img" id="about">
+      <h1 class="center">ABOUT ME</h1>
+      <p class="center text-grey">
+        Here you will find more information about me, what I do, and my current
+        skills mostly in terms of programming and technology.
+      </p>
+      <div class="grid-container">
+        <div class="grid-container-child">
+          <h1 class="heading-about">Get to know me!</h1>
+          <p class="text-grey">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+            vitae tempus quam pellentesque. Commodo quis imperdiet massa
+            tincidunt nunc pulvinar sapien et.
+          </p>
+          <p class="text-grey">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+            vitae tempus quam pellentesque.
+          </p>
+        </div>
+        <div>
+          <h1 class="heading-about">My skills</h1>
+          <div class="grid-container-two">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>GIT</div>
+            <div>GitHub</div>
+            <div>React.JS</div>
+            <div>Node.JS</div>
+            <div>MongoDB</div>
+            <div>SQL</div>
+            <div>Postgres</div>
+            <div>Terminal</div>
+            <div>Python</div>
+            <div>TypeScript</div>
+            <div>GraphQL</div>
+            <div>Figma</div>
+            <div>Java</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="main-container-child" id="projects">
-        <h1 class="center">PROJECTS</h1>
-        <p class="center text-grey">
-          Here you will find some of the personal project that I created with
-          their live preview and source code.
-        </p>
-        <div class="project-wrapper">
-          <div class="project-wrapper-image">
-            <img
-              src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-4.jpg"
-              alt="Image shows athletes"
-            />
-          </div>
-          <div class="project-wrapper-content">
-            <h4>Sports tracker</h4>
-            <p class="text-grey">
-              I love sports. I love to track my progress. With this sports
-              tracker app, you can easily track your progress and unlock
-              achievements.
-            </p>
-            <button class="btn btn-secondary">Visit</button>
-          </div>
+    <section class="main-container projects-bg" id="projects">
+      <h1 class="center">PROJECTS</h1>
+      <p class="center text-grey">
+        Here you will find some of the personal project that I created with
+        their live preview and source code.
+      </p>
+      <div class="project-wrapper">
+        <div class="project-wrapper-image">
+          <img
+            src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-4.jpg"
+            alt="Image shows athletes"
+          />
         </div>
-        <div class="project-wrapper">
-          <div class="project-wrapper-image">
-            <img
-              src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-2.jpg"
-              alt="Image shows notebook"
-            />
-          </div>
-          <div class="project-wrapper-content">
-            <h4>Todo app</h4>
-            <p class="text-grey">
-              Having goals is a must in every day life. This is why I created
-              this Todo app that I use every workday to plan my tasks ahead.
-            </p>
-            <button class="btn btn-secondary">Visit</button>
-          </div>
+        <div class="project-wrapper-content">
+          <h4>Sports tracker</h4>
+          <p class="text-grey">
+            I love sports. I love to track my progress. With this sports tracker
+            app, you can easily track your progress and unlock achievements.
+          </p>
+          <button class="btn btn-secondary">Visit</button>
         </div>
       </div>
+      <div class="project-wrapper">
+        <div class="project-wrapper-image">
+          <img
+            src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-2.jpg"
+            alt="Image shows notebook"
+          />
+        </div>
+        <div class="project-wrapper-content">
+          <h4>Todo app</h4>
+          <p class="text-grey">
+            Having goals is a must in every day life. This is why I created this
+            Todo app that I use every workday to plan my tasks ahead.
+          </p>
+          <button class="btn btn-secondary">Visit</button>
+        </div>
+      </div>
+    </section>
 
-      <div class="main-container-child" id="contact">
-        <h1 class="center">CONTACT</h1>
-        <p class="center">
-          Feel free to Contact me by submitting the form below or reach out to
-          me to my socials.
-        </p>
-        <div class="contact-wrapper">
+    <section class="main-container contact background-without-img" id="contact">
+      <h1 class="center">CONTACT</h1>
+      <p class="center">
+        Feel free to Contact me by submitting the form below or reach out to me
+        to my socials.
+      </p>
+      <div class="contact-wrapper">
+        <div>
+          <h5>Mobile</h5>
+          <p><i class="fa fa-phone"></i><span> +250788497933</span></p>
+          <h5>E-mail</h5>
+          <p>
+            <i class="fa fa-envelope"></i><span> patrickhag09@gmail.com</span>
+          </p>
+          <h5>Social media</h5>
           <div>
-            <h5>Mobile</h5>
-            <p><i class="fa fa-phone"></i><span> +250788497933</span></p>
-            <h5>E-mail</h5>
+            <a href="mailto:patrickhag09@gmail.com" target="_blank"
+              ><img class="icon" src="./images/mail_icon.png" alt=""
+            /></a>
+            <a href="https://www.github.com/patrickhag" target="_blank"
+              ><img class="icon" src="./images/linkedin_icon.png" alt=""
+            /></a>
+            <a href="https://www.github.com/patrickhag" target="_blank"
+              ><img class="icon" src="./images/twitter_icon.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div>
+          <form action="#">
+            <p><input type="text" placeholder="Your name" /></p>
+            <p><input type="text" placeholder="Your phone" /></p>
+            <p><input type="email" placeholder="Your email" /></p>
             <p>
-              <i class="fa fa-envelope"></i><span> patrickhag09@gmail.com</span>
+              <textarea
+                cols="27"
+                rows="5"
+                placeholder="Your message"
+              ></textarea>
             </p>
-            <h5>Social media</h5>
-            <div>
-              <a href="mailto:patrickhag09@gmail.com" target="_blank"
-                ><img class="icon" src="./images/mail_icon.png" alt=""
-              /></a>
-              <a href="https://www.github.com/patrickhag" target="_blank"
-                ><img class="icon" src="./images/linkedin_icon.png" alt=""
-              /></a>
-              <a href="https://www.github.com/patrickhag" target="_blank"
-                ><img class="icon" src="./images/twitter_icon.png" alt=""
-              /></a>
-            </div>
-          </div>
-          <div>
-            <form action="#">
-              <p><input type="text" placeholder="Your name" /></p>
-              <p><input type="text" placeholder="Your phone" /></p>
-              <p><input type="email" placeholder="Your email" /></p>
-              <p>
-                <textarea
-                  cols="27"
-                  rows="5"
-                  placeholder="Your message"
-                ></textarea>
-              </p>
-              <button class="btn btn-secondary">SEND</button>
-            </form>
-          </div>
+            <button class="btn btn-secondary">SEND</button>
+          </form>
         </div>
       </div>
-    </main>
+    </section>
     <footer>
       <ul>
         <li><a class="footer-link" href="#home">Home |</a></li>

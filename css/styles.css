@@ -45,10 +45,6 @@ a {
   color: #7843e9;
 }
 
-.container {
-  margin: 3.5rem 0 3.5rem 3.5rem;
-}
-
 .main-header {
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
@@ -131,6 +127,8 @@ textarea {
   width: 18.75rem;
   border: 2px solid #535151;
   border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
 }
 
 input::placeholder,
@@ -176,11 +174,25 @@ footer ul li {
   color: #fff;
 }
 
-@media (max-width: 37.5rem) {
-  .main-nav ul {
-    display: none;
-  }
-  .fa-bars {
-    display: block;
-  }
+.background-with-img {
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url(../images/landpage-bg.jpg);
+  background-position: center;
+  position: relative;
+}
+
+.background-without-img {
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 0.8),
+    rgba(245, 245, 245, 0.8)
+  );
+}
+
+.projects-bg {
+  background-color: rgba(246, 242, 242, 0.5);
 }

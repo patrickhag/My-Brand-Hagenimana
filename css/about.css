@@ -7,7 +7,7 @@
 */
 
 .main-container {
-  margin: 5rem;
+  padding: 4rem;
 }
 
 .center {
@@ -22,10 +22,6 @@
 
 .heading-about {
   color: #7843e9;
-}
-
-.main-container-child {
-  padding-top: 5rem;
 }
 
 .grid-container-two {
@@ -44,7 +40,7 @@
 
 @media (max-width: 61.93rem) {
   .main-container {
-    margin: 2rem;
+    padding: 2rem;
   }
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
@@ -57,7 +53,7 @@
 
 @media (max-width: 37.5rem) {
   .main-container {
-    margin: 1rem;
+    padding: 1rem;
   }
   .grid-container-two {
     grid-template-columns: repeat(2, 1fr);
