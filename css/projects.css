@@ -1,0 +1,21 @@
+/* 
+
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
+.project-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.project-wrapper-image {
+  margin: 2rem;
+}
+.project-wrapper-image > img {
+  width: 15rem;
+  height: 14rem;
+  border-radius: 5px;
+}

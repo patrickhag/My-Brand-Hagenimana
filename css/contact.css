@@ -1,0 +1,13 @@
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 1.5px solid #7843e9;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+@media (max-width: 37.5rem) {
+  .contact-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

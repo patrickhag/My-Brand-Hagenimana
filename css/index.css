@@ -4,8 +4,31 @@
   900 - 1200px = 75rem:   Tablet landscape 
 
 */
+
+.background-with-img {
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url(../images/landpage-bg.jpg);
+  background-position: center;
+  position: relative;
+}
+
+.background-without-img {
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 0.8),
+    rgba(245, 245, 245, 0.8)
+  );
+  background-position: center;
+  position: relative;
+}
+
 .container-wrapper {
   display: flex;
+  padding: 3.5rem 0 3.5rem 3.5rem;
 }
 .section-two-image {
   width: 31.25rem;
@@ -36,15 +59,9 @@
   display: none;
 }
 
-@media (max-width: 37.5rem) {
-  .container {
-    margin: 1rem;
-  }
-}
-
 @media (max-width: 61.93rem) {
   .container {
-    margin: 2rem;
+    padding: 2rem;
   }
   .section-two-image {
     display: none;
@@ -52,6 +69,8 @@
   .container-wrapper {
     flex-direction: column-reverse;
     align-items: center;
+    margin: 0;
+    padding: 0;
   }
   .section-two-image-sc {
     display: block;
