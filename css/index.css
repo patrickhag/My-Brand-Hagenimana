@@ -5,27 +5,6 @@
 
 */
 
-.background-with-img {
-  background: linear-gradient(
-      to right,
-      rgba(245, 245, 245, 0.8),
-      rgba(245, 245, 245, 0.8)
-    ),
-    url(../images/landpage-bg.jpg);
-  background-position: center;
-  position: relative;
-}
-
-.background-without-img {
-  background: linear-gradient(
-    to right,
-    rgba(245, 245, 245, 0.8),
-    rgba(245, 245, 245, 0.8)
-  );
-  background-position: center;
-  position: relative;
-}
-
 .container-wrapper {
   display: flex;
   padding: 3.5rem 0 3.5rem 3.5rem;
