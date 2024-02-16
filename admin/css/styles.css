@@ -1,0 +1,175 @@
+/* 
+
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape 
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+3:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.blackish {
+  color: #51312c;
+}
+
+.greyish {
+  color: #626262;
+}
+
+.greenish {
+  color: rgb(0, 153, 51);
+}
+
+.container-aside {
+  background-color: rgb(226, 226, 226, 0.3);
+  height: 100%;
+  width: 12rem;
+  position: fixed;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.container-aside nav {
+  display: flex;
+  align-items: center;
+}
+
+.container-aside ul li {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.container-aside ul li a {
+  color: #8f8183;
+  font-size: larger;
+}
+.container-aside ul li:hover {
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+}
+i {
+  margin-right: 1rem;
+}
+
+.container-aside ul {
+  padding: 0;
+}
+
+.container-main {
+  margin: 0 3rem 0 14rem;
+  padding: 0.7rem;
+}
+
+.container-main-buttons {
+  text-align: right;
+}
+
+.button-globe {
+  background-color: rgb(226, 226, 226);
+  padding: 0.7rem;
+}
+
+.button-globe-notify {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.button-globe-shared {
+  border-radius: 7px 5px;
+}
+
+.select {
+  border: none;
+}
+
+.billboard-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+p {
+  margin: 0;
+}
+
+.container-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-main-header :nth-child(2) {
+  height: 39px;
+}
+
+table {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+}
+
+.tr-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+td img {
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  color: #000;
+  width: 18.75rem;
+  border: 2px solid #535151;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder,
+input[type="text"] {
+  font-size: 0.9rem;
+}
+
+form button {
+  width: 100%;
+}
