@@ -3,7 +3,7 @@
   grid-template-columns: auto auto;
   border: 1.5px solid #7843e9;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 @media (max-width: 37.5rem) {
