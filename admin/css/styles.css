@@ -66,7 +66,7 @@ a {
 .container-aside ul li {
   display: block;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0.3rem;
 }
 
 .container-aside ul li a {
@@ -78,7 +78,7 @@ a {
   border-radius: 5px;
 }
 i {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .container-aside ul {
@@ -128,10 +128,6 @@ p {
   align-items: center;
 }
 
-.container-main-header :nth-child(2) {
-  height: 39px;
-}
-
 table {
   margin-top: 1rem;
   width: 100%;
@@ -146,7 +142,7 @@ table th {
   align-items: center;
 }
 
-td img {
+.tr-wrapper img {
   width: 2.5rem;
   border-radius: 50%;
   text-align: center;
