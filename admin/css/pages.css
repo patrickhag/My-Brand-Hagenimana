@@ -1,0 +1,25 @@
+.card-wrapper {
+  border: 2px solid #006600;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
+    0 4px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-wrapper img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.formatted-text {
+  display: flex;
+  align-items: center;
+}
+
+.card-wrapper-button button {
+  background-color: #fff;
+}

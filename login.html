@@ -33,11 +33,19 @@
     </header>
     <section class="main-container-login">
       <div class="login-form-wrapper">
-        <form action="#" class="">
-          <p class="center">Login and get to like articles</p>
-          <hr class="vertical-line" />
-          <p><input type="email" placeholder="🙎‍♂️ Email" /></p>
-          <p><input type="password" placeholder="🔒 Password" /></p>
+        <form action="/" id="form">
+          <div class="center margin-bottom">
+            Login and get to like articles
+            <hr class="vertical-line" />
+          </div>
+          <div class="input-control">
+            <input type="email" placeholder="🙎‍♂️ Email" id="email" />
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <input type="password" placeholder="🔒 Password" id="password" />
+            <div class="error"></div>
+          </div>
           <button class="btn btn-secondary">Sign in</button>
           <p>
             <span
@@ -50,9 +58,9 @@
     </section>
     <footer>
       <ul>
-        <li><a class="footer-link" href="#home">Home |</a></li>
-        <li><a class="footer-link" href="#about">About |</a></li>
-        <li><a class="footer-link" href="#projects">Projects |</a></li>
+        <li><a class="footer-link" href="#home">Home | </a></li>
+        <li><a class="footer-link" href="#about">About | </a></li>
+        <li><a class="footer-link" href="#projects">Projects | </a></li>
         <li><a class="footer-link" href="#contact">Contact</a></li>
       </ul>
       <p>
@@ -69,5 +77,6 @@
         >
       </p>
     </footer>
+    <script src="./js/login.js"></script>
   </body>
 </html>
