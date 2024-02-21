@@ -204,17 +204,28 @@
           </div>
         </div>
         <div>
-          <form action="#">
-            <p><input type="text" placeholder="Your name" /></p>
-            <p><input type="text" placeholder="Your phone" /></p>
-            <p><input type="email" placeholder="Your email" /></p>
-            <p>
+          <form action="/" id="form">
+            <div class="input-control">
+              <input type="text" placeholder="Your name" id="username" />
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" placeholder="Your phone" id="phoneNumber" />
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="email" placeholder="Your email" id="email" />
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
               <textarea
                 cols="27"
                 rows="5"
                 placeholder="Your message"
+                id="textArea"
               ></textarea>
-            </p>
+              <div class="error"></div>
+            </div>
             <button class="btn btn-secondary">SEND</button>
           </form>
         </div>
@@ -241,5 +252,6 @@
         >
       </p>
     </footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>
