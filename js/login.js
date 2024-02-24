@@ -4,56 +4,51 @@ const password = document.getElementById("password")
 
 form.addEventListener("submit", e => {
   e.preventDefault()
-
-  validateInputs()
+  const isValid = validateInputs()
+  if (isValid) {
+    const user = {
+      email: email.value.trim(),
+      password: password.value.trim(),
+    }
+    loggingIn(user)
+  }
 })
 
-const setError = (element, message) => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector(".error")
+async function hashPassword(password) {
+  const encoder = new TextEncoder()
+  const data = encoder.encode(password)
 
-  errorDisplay.innerText = message
-  inputControl.classList.add("error")
-  inputControl.classList.remove("success")
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data)
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+  const hashedPassword = hashArray
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join("")
+
+  return hashedPassword
 }
 
-const setSuccess = element => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector(".error")
+const allUsers = JSON.parse(localStorage.getItem("Users"))
 
-  errorDisplay.innerText = ""
-  inputControl.classList.add("success")
-  inputControl.classList.remove("error")
-}
+async function loggingIn(passedUser) {
+  const hashedPassword = await hashPassword(passedUser.password)
 
-const isValidEmail = email => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return re.test(String(email).toLowerCase())
-}
+  const userIndex = allUsers.findIndex(
+    user => user.email === passedUser.email && hashedPassword === user.password
+  )
 
-const isValidPassword = password => {
-  const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_+=]).{8,20}$/
-  return re.test(password)
-}
-
-const validateInputs = () => {
-  const emailValue = email.value.trim()
-  const passwordValue = password.value.trim()
-
-  if (emailValue === "") {
-    setError(email, "Email is required")
-  } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address")
+  if (userIndex >= 0) {
+    let username = allUsers[userIndex].username
+    username = username.split(" ")[0]
+    allUsers[userIndex].isLoggedIn = true
+    localStorage.setItem("Users", JSON.stringify(allUsers))
+    alert("Welcome " + username)
+    window.location.href = "article.html"
+  } else if (
+    passedUser.email == "ADMIN@ADMIN.OWNER" &&
+    passedUser.password === "adMIN@1234"
+  ) {
+    window.location.href = "/admin"
   } else {
-    setSuccess(email)
-  }
-
-  if (passwordValue === "") {
-    setError(password, "Password is required")
-  } else if (!isValidPassword(passwordValue)) {
-    setError(password, "Password must be at least 8 character.")
-  } else {
-    setSuccess(password)
+    alert("Verify your credentials. or sign up instead!")
   }
 }
