@@ -7,70 +7,58 @@ const password2 = document.getElementById("password2")
 form.addEventListener("submit", e => {
   e.preventDefault()
 
-  validateInputs()
+  const isValid = validateInputs()
+  console.log(isValid)
+
+  if (isValid) {
+    const user = {
+      id: Date.now(),
+      username: fullname.value,
+      email: email.value.trim(),
+      password: password.value,
+      password2Value: password2.value,
+      isLoggedIn: false,
+    }
+    addUserAndRedirect(user)
+  }
 })
 
-const setError = (element, message) => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector(".error")
+let userData = []
 
-  errorDisplay.innerText = message
-  inputControl.classList.add("error")
-  inputControl.classList.remove("success")
+async function hashPassword(password) {
+  const encoder = new TextEncoder()
+  const data = encoder.encode(password)
+
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data)
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+  const hashedPassword = hashArray
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join("")
+
+  return hashedPassword
 }
 
-const setSuccess = element => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector(".error")
-
-  errorDisplay.innerText = ""
-  inputControl.classList.add("success")
-  inputControl.classList.remove("error")
-}
-
-const isValidEmail = email => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return re.test(String(email).toLowerCase())
-}
-
-const isValidPassword = password => {
-  const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_+=]).{8,20}$/
-  return re.test(password)
-}
-
-const validateInputs = () => {
-  const fullnameValue = fullname.value.trim()
-  const emailValue = email.value.trim()
-  const passwordValue = password.value.trim()
-  const password2Value = password2.value.trim()
-
-  if (fullnameValue === "") {
-    setError(fullname, "fullname is required")
-  } else {
-    setSuccess(fullname)
+async function addUserAndRedirect(user) {
+  const hashedPassword = await hashPassword(user.password)
+  const hashedPassword2 = await hashPassword(user.password2)
+  const restructureUser = {
+    id: Date.now(),
+    username: user.username,
+    email: user.email,
+    password: hashedPassword,
+    password2Value: hashedPassword2,
+    isLoggedIn: user.isLoggedIn,
   }
 
-  if (emailValue === "") {
-    setError(email, "Email is required")
-  } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address")
-  } else {
-    setSuccess(email)
+  const existingUsers = localStorage.getItem("Users")
+  if (existingUsers) {
+    userData = JSON.parse(existingUsers)
   }
 
-  if (passwordValue === "") {
-    setError(password, "Password is required")
-  } else if (!isValidPassword(passwordValue)) {
-    setError(password, "Password must be at least 8 character.")
-  } else {
-    setSuccess(password)
-  }
-  if (password2Value === "") {
-  } else if (password2Value !== passwordValue) {
-    setError(password2, "Please confirm your password")
-    setError(password2, "Passwords doesn't match")
-  } else {
-    setSuccess(password2)
+  if (restructureUser) {
+    userData.push(restructureUser)
+    localStorage.setItem("Users", JSON.stringify(userData))
+    alert("Registered successfully!")
+    window.location.href = "login.html"
   }
 }

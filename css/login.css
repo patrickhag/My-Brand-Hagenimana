@@ -19,3 +19,8 @@
 .login-form-wrapper button {
   margin: 0.7rem 0;
 }
+
+.show-output-on-credentials {
+  color: rgba(171, 17, 17, 0.5);
+  display: none;
+}

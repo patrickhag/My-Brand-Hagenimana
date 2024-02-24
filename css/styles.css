@@ -97,11 +97,11 @@ a {
 }
 .btn {
   padding: 0.5rem 2rem;
+  border-radius: 3px;
 }
 
 .btn-primary {
   border: 2px solid #7843e9;
-  border-radius: 5px;
   background-color: #fff;
   margin-right: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),

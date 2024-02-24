@@ -34,6 +34,9 @@
     <section class="main-container-login">
       <div class="login-form-wrapper">
         <form action="/" id="form">
+          <div class="show-output-on-credentials">
+            ⚠ Credentials don't match. Sign up instead!
+          </div>
           <div class="center margin-bottom">
             Login and get to like articles
             <hr class="vertical-line" />
@@ -46,7 +49,7 @@
             <input type="password" placeholder="🔒 Password" id="password" />
             <div class="error"></div>
           </div>
-          <button class="btn btn-secondary">Sign in</button>
+          <button class="btn btn-secondary" id="signUpButton">Sign in</button>
           <p>
             <span
               ><b>Or</b>
@@ -78,5 +81,6 @@
       </p>
     </footer>
     <script src="./js/login.js"></script>
+    <script src="./js/validate/login-validate.js"></script>
   </body>
 </html>
