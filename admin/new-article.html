@@ -31,9 +31,9 @@
             >
           </li>
           <li>
-            <a href="">
+            <a href="all-articles.html">
               <i class="far fa-file-alt fa-lg"></i>
-              <span> Pages</span>
+              <span> Articles</span>
             </a>
           </li>
           <li>
@@ -75,13 +75,13 @@
     <section class="container-main">
       <h2 class="blackish text-center">Create an article</h2>
       <div class="create-form-wrapper">
-        <form action="#">
-          <p><input type="text" placeholder="Title" /></p>
+        <form action="#" id="form">
+          <p><input type="text" placeholder="Title" id="title" /></p>
           <p>
-            <input type="text" placeholder="Summary" />
+            <input type="text" placeholder="Summary" id="summary" />
           </p>
-          <input type="file" id="" placeholder="Bg-picture" />
-          <textarea id="default" cols="30" rows="10"></textarea>
+          <input type="file" id="bgPicture" />
+          <textarea id="body" cols="30" rows="10" placeholder="Body"></textarea>
           <button
             type="submit"
             class="button-globe button-globe-shared button-article"
@@ -91,7 +91,6 @@
         </form>
       </div>
     </section>
-    <script src="./tinymce/tinymce.min.js"></script>
-    <script src="./tinymce/script.js"></script>
+    <script src="./js/new-article.js"></script>
   </body>
 </html>

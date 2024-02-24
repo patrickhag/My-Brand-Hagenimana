@@ -1,0 +1,63 @@
+/* 
+  0 - 600px = 37.5rem:      Phone
+  600 - 768px = 48rem:    Tablet portrait
+  900 - 1200px = 75rem:   Tablet landscape 
+
+*/
+
+.articles-container {
+  display: flex;
+  /* grid-template-columns: auto auto auto; */
+  gap: 2rem;
+}
+
+.card-wrapper {
+  border: 2px solid #006600;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
+    0 4px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1rem;
+  width: 20rem;
+  padding: 0.5rem;
+}
+
+.card-wrapper img {
+  width: 100%;
+  height: 142px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.text-space {
+  margin-left: 0.5rem;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.margin-top-bottom {
+  margin: 0.7rem 0 0.7rem 0;
+}
+
+.card-wrapper-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-wrapper-button button {
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fa-trash-alt:hover {
+  color: rgb(232, 13, 13);
+}
+.fa-edit-alt:hover {
+  color: #006600;
+}
+
+@media (max-width: 48rem) {
+  .articles-container {
+    grid-template-columns: auto auto;
+  }
+}

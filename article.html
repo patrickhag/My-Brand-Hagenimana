@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My brand - Homepage</title>
+    <title>My brand - Article's page</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/blog.css" />
     <link rel="stylesheet" href="./css/article.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
   </head>
   <body class="background-without-img">
     <header class="main-header">
@@ -28,62 +28,105 @@
           </ul>
         </nav>
         <div>
-          <i class="fas fa-search fa-margin"></i>
-          <i class="fas fa-sun"></i>
+          <a href=""><span>Login</span></a>
         </div>
       </div>
     </header>
     <div class="left-icons">
-      <ul>
+      <ul id="leftIconsWrapper">
         <li>
-          <a href="./login.html"><i class="far fa-heart"></i></a>
+          <a href="login.html" class="btn-third" id="likeButton">
+            <i class="far fa-heart"></i>
+          </a>
         </li>
         <li>
-          <a href="./login.html"><i class="far fa-comment"></i></a>
+          <a href="login.html" class="btn-third" id="commentButton">
+            <i class="far fa-comment"></i>
+          </a>
         </li>
       </ul>
     </div>
     <section class="main-container">
-      <div class="main-article">
-        <h1 class="center">HOW TO START WEB DEV IN 2024</h1>
-        <p class="center">
-          JANUARY 29, 2024 BY <span class="text-purple">PATRICK HAG</span>
-        </p>
-        <div>
-          <h3 class="center">What is web development?</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-          <picture>
-            <img
-              src="./images/jesse-echevarria-S0sgVMEVqBo-unsplash.jpg"
-              alt="Articles's background"
-              class="articles-cover"
-          /></picture>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Necessitatibus quam possimus earum incidunt delectus repellendus at
-            magni suscipit, est, inventore saepe, expedita tenetur modi vel
-            error adipisci ipsum doloremque ullam? Alias consequuntur eveniet
-            dignissimos, cum id illo eius reiciendis maxime nobis! Voluptate,
-            quas temporibus? Ratione odio cupiditate soluta odit exercitationem?
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-            officiis perspiciatis odio iste neque debitis, iure a alias, culpa
-            fugit laborum? Atque et quos inventore praesentium voluptatum
-            provident hic enim!
-          </p>
+      <div id="article-container"></div>
+      <div class="modal-content hidden" id="modalContainer">
+        <div class="modal-close">
+          <button id="modalClose" class="btn-third">
+            <i class="fas fa-times fa-lg"></i>
+          </button>
         </div>
+
+        <nav class="modal-user-section">
+          <div>
+            <img
+              src="./images/yyny4b-min.jpg"
+              alt=""
+              width="40"
+              height="40"
+              class="modal-user-image"
+            />
+            <!-- <div class="bottom-border-line"></div> -->
+          </div>
+          <div>
+            <div class="modal-name-headers">
+              <h5 class="">Peter doe</h5>
+              <span class="">7 days ago</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              possimus repellat officia excepturi exercitationem blanditiis qui
+              cum, perferendis at quod ad laborum consequuntur soluta ratione id
+              modi, praesentium aliquid tempore aperiam! Quas iusto recusandae
+              quis reprehenderit nesciunt excepturi quidem fuga?
+            </p>
+          </div>
+        </nav>
+        <nav class="modal-user-section">
+          <div>
+            <img
+              src="./images/yyny4b-min.jpg"
+              alt=""
+              width="40"
+              height="40"
+              class="modal-user-image"
+            />
+            <!-- <div class="bottom-border-line"></div> -->
+          </div>
+          <div>
+            <div class="modal-name-headers">
+              <h5 class="">Peter doe</h5>
+              <span class="">7 days ago</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              possimus repellat officia excepturi exercitationem blanditiis qui
+              cum, perferendis at quod ad laborum consequuntur soluta ratione id
+              modi, praesentium aliquid tempore aperiam! Quas iusto recusandae
+              quis reprehenderit nesciunt excepturi quidem fuga?
+            </p>
+          </div>
+        </nav>
+        <p>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Leave a comment"
+          ></textarea>
+        </p>
+        <p>
+          <button class="btn">Post comment</button>
+          <button class="btn">Cancel</button>
+        </p>
       </div>
     </section>
     <footer>
       <ul>
-        <li><a class="footer-link" href="#home">Home |</a></li>
-        <li><a class="footer-link" href="#about">About |</a></li>
-        <li><a class="footer-link" href="#projects">Projects |</a></li>
+        <li><a class="footer-link" href="#home">Home&nbsp;|&nbsp;</a></li>
+        <li><a class="footer-link" href="#about">About&nbsp;|&nbsp;</a></li>
+        <li>
+          <a class="footer-link" href="#projects">Projects&nbsp;|&nbsp;</a>
+        </li>
         <li><a class="footer-link" href="#contact">Contact</a></li>
       </ul>
       <p>
@@ -100,5 +143,6 @@
         >
       </p>
     </footer>
+    <script src="./js/article.js"></script>
   </body>
 </html>

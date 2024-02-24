@@ -69,10 +69,12 @@ a {
   padding: 0.3rem 0.3rem;
 }
 
-.container-aside ul li a {
+.container-aside ul li a,
+button {
   color: #8f8183;
   font-size: larger;
 }
+
 .container-aside ul li:hover {
   background-color: rgb(226, 226, 226);
   border-radius: 5px;
@@ -97,6 +99,7 @@ i {
 .button-globe {
   background-color: rgb(226, 226, 226);
   padding: 0.7rem;
+  cursor: pointer;
 }
 
 .button-globe-notify {

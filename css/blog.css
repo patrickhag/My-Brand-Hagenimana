@@ -19,6 +19,10 @@ hr {
   margin-right: 0.5rem;
 }
 
+.project-wrapper {
+  cursor: pointer;
+}
+
 /* tablet view */
 @media (max-width: 37.5rem) {
   .main-container {

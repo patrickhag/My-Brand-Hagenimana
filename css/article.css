@@ -25,9 +25,16 @@
   border-radius: 5px;
   padding: 1rem;
 }
+.left-icons button {
+  background-color: inherit;
+}
 
 ul li {
-  padding: 0.3rem;
+  padding: 0.3rem 0.1rem;
+}
+
+ul li i {
+  font-size: 1.3rem;
 }
 
 @media (max-width: 48rem) {
