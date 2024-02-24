@@ -75,41 +75,22 @@
     <section class="container-main">
       <h2 class="blackish text-center">Edit an article</h2>
       <div class="create-form-wrapper">
-        <form action="#">
+        <form action="#" id="form">
+          <p><input type="text" placeholder="Title" id="title" /></p>
           <p>
-            <input
-              type="text"
-              placeholder="Title"
-              value="Lorem ipsum dolor sit amet."
-            />
+            <input type="text" placeholder="Summary" id="summary" />
           </p>
-
-          <p>
-            <input
-              type="text"
-              placeholder="Summary"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, accusantium dolorum. Deleniti temporibus ratione nisi."
-            />
-          </p>
-          <input
-            type="file"
-            id=""
-            placeholder="Bg-picture"
-            value="img32423.jpg"
-          />
-          <textarea id="default" cols="30" rows="10">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, harum tempore? Minima, reprehenderit odit! Atque saepe architecto eos ducimus quasi porro, animi quaerat. Possimus necessitatibus delectus, suscipit vel quos blanditiis.</textarea
-          >
+          <input type="file" id="bgPicture" />
+          <textarea cols="30" rows="10" placeholder="Body" id="body"></textarea>
           <button
             type="submit"
             class="button-globe button-globe-shared button-article"
           >
-            Edit article
+            Edit an article
           </button>
         </form>
       </div>
     </section>
-    <script src="./tinymce/tinymce.min.js"></script>
-    <script src="./tinymce/script.js"></script>
+    <script src="./js/edit-article.js"></script>
   </body>
 </html>

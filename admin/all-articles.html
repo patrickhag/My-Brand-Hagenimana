@@ -10,16 +10,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/all-articles.css" />
   </head>
   <body>
     <aside class="container-aside">
-      <h1 class=" greenish">MyBlog</h1>
+      <h1 class="greenish">MyBlog</h1>
       <nav>
         <ul>
           <li>
-            <a href="" class="blackish">
+            <a href="./index.html" class="blackish">
               <i class="fas fa-th-large fa-sm"></i>
-              <span> Dashboard</span>
+              <span>Dashboard</span>
             </a>
           </li>
           <li>
@@ -41,7 +42,7 @@
             </a>
           </li>
           <li>
-            <a href="../login.html">
+            <a href="/admin/login.html">
               <i class="fas fa-sign-out-alt fa-sm"></i>
               <span> Sign out</span>
             </a>
@@ -69,60 +70,19 @@
           <a href="./new-article.html" class="greenish">New article</a>
         </button>
       </div>
-      <h2 class="blackish">Dashboard</h2>
-      <div class="billboard-wrapper">
-        <div>
-          <p>25,651</p>
-          <p class="greyish">Likes</p>
-        </div>
-        <div>
-          <p>10,635</p>
-          <p class="greyish">Comments</p>
-        </div>
-        <div>
-          <p>6453</p>
-          <p class="greyish">Shares</p>
-        </div>
-      </div>
     </section>
     <section class="container-main">
+      <h2 class="blackish">Pages</h2>
       <div class="container-main-header">
-        <h3 class="blackish">Popular articles</h3>
+        <h3 class="blackish">All articles</h3>
         <select class="button-globe button-globe-shared select greenish">
-          <option value="month">Last month</option>
-          <option value="24days">Last 24days</option>
-          <option value="14days">Last 14days</option>
+          <option value="month">Web dev</option>
+          <option value="24days">Data science</option>
+          <option value="14days">AI</option>
         </select>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th class="greyish">Articles</th>
-            <th class="greyish">Views</th>
-            <th class="greyish">Comments</th>
-            <th class="greyish">Likes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="tr-wrapper">
-              <div>
-                <img
-                  src="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1648478885/learnhtmlcss/portfolio/project-4.jpg"
-                  alt="Image shows athletes"
-                />
-              </div>
-              <div>
-                &nbsp;Top 10 relevant fonts of all time.Top 10 relevant fonts of
-                all time.
-              </div>
-            </td>
-            <td>464,653</td>
-            <td>182,843</td>
-            <td>9234</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="articles-container" id="articles-container"></div>
     </section>
+    <script src="./js/all-articles.js"></script>
   </body>
 </html>
