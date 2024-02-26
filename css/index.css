@@ -38,6 +38,10 @@
   display: none;
 }
 
+#dark-button {
+  cursor: pointer;
+}
+
 @media (max-width: 61.93rem) {
   .container {
     padding: 2rem;

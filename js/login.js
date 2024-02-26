@@ -27,7 +27,7 @@ async function hashPassword(password) {
   return hashedPassword
 }
 
-const allUsers = JSON.parse(localStorage.getItem("Users"))
+const allUsers = JSON.parse(localStorage.getItem("Users")) || []
 
 async function loggingIn(passedUser) {
   const hashedPassword = await hashPassword(passedUser.password)

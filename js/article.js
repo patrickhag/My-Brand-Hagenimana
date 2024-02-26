@@ -1,47 +1,19 @@
+const mainNavLinks = document.getElementById("main-nav-links")
 const modalContainer = document.getElementById("modalContainer")
 const leftIconsWrapper = document.getElementById("leftIconsWrapper")
-const allUsers = JSON.parse(localStorage.getItem("Users"))
+const modalClose = document.getElementById("modalClose")
 
-document.addEventListener("DOMContentLoaded", () => {
-  checkWhoLoggedIn()
-  const commentButton = document.getElementById("commentButton")
-  const modalClose = document.getElementById("modalClose")
-
-  if (commentButton) {
-    commentButton.addEventListener("click", showModal)
-  }
-  if (modalClose) {
-    modalClose.addEventListener("click", hideModal)
-  }
-
-  function showModal() {
-    modalContainer.classList.add("show")
-    modalContainer.classList.remove("hidden")
-  }
-
-  function hideModal() {
-    modalContainer.classList.add("hidden")
-    modalContainer.classList.remove("show")
-  }
-})
-
-const checkWhoLoggedIn = () => {
-  foundUser = allUsers.filter(user => user.isLoggedIn == true)[0]
-  if (foundUser.isLoggedIn) {
-    leftIconsWrapper.innerHTML = `
-    <li>
-    <button class="btn-third" id="likeButton">
-      <i class="far fa-heart"></i>
-    </button>
-  </li>
-  <li>
-    <button id="commentButton" class="btn-third">
-      <i class="far fa-comment"></i>
-    </button>
-  </li>
-  `
-  }
+function showModal() {
+  modalContainer.classList.add("show")
+  modalContainer.classList.remove("hidden")
 }
+
+function hideModal() {
+  modalContainer.classList.add("hidden")
+  modalContainer.classList.remove("show")
+}
+
+modalClose.addEventListener("click", hideModal())
 
 const months = [
   "January",
@@ -60,7 +32,7 @@ const months = [
 
 const urlParams = new URLSearchParams(window.location.search)
 const id = parseInt(urlParams.get("id"))
-const articlesData = JSON.parse(localStorage.getItem("Articles"))
+const articlesData = JSON.parse(localStorage.getItem("Articles")) || []
 
 const showArticle = id => {
   const article = articlesData.find(article => article.id === id)
@@ -97,3 +69,32 @@ const showArticle = id => {
 }
 
 window.addEventListener("onload", showArticle(id))
+
+const allUsers = JSON.parse(localStorage.getItem("Users")) || []
+
+const checkWhoLoggedIn = () => {
+  foundUser = allUsers.find(user => user.isLoggedIn == true)
+  return foundUser.isLoggedIn ? foundUser.isLoggedIn : false
+}
+
+const isLoggedIn = checkWhoLoggedIn()
+
+if (isLoggedIn) {
+  mainNavLinks.innerHTML = `
+  <a href=""><span>Logout</span></a>
+  `
+  leftIconsWrapper.innerHTML = `
+    <li>
+    <button class="btn-third" id="likeButton">
+      <i class="far fa-heart"></i>
+    </button>
+  </li>
+  <li>
+    <button id="commentButton" class="btn-third">
+      <i class="far fa-comment"></i>
+    </button>
+  </li>
+  `
+  const commentButton = document.getElementById("commentButton")
+  commentButton.addEventListener("click", () => showModal())
+}
