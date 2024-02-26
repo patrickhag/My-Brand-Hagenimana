@@ -1,0 +1,30 @@
+.query-container {
+  border: 2px solid #006600;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
+    0 4px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.query-container h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.query-header {
+  position: relative;
+}
+
+.query-sub-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.query-sub-container p {
+  display: block;
+}
+
+.inline-block-container:nth-child(1) {
+  display: flex;
+}

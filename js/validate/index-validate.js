@@ -37,31 +37,40 @@ const validateInputs = () => {
   const phoneNumberValue = phoneNumber.value
   const textAreaValue = textArea.value
 
+  let isValidate = true
+
   if (usernameValue === "") {
-    setError(username, "Username is required")
+    setError(username, "Your name is required")
+    isValidate = false
   } else {
     setSuccess(username)
   }
 
   if (phoneNumberValue === "") {
     setError(phoneNumber, "Phone number is required")
+    isValidate = false
   } else if (!isValidPhoneNumber(phoneNumberValue)) {
     setError(phoneNumber, "Provide a valid phone number")
+    isValidate = false
   } else {
     setSuccess(phoneNumber)
   }
 
   if (emailValue === "") {
     setError(email, "Email is required")
+    isValidate = false
   } else if (!isValidEmail(emailValue)) {
     setError(email, "Provide a valid email address")
+    isValidate = false
   } else {
     setSuccess(email)
   }
 
   if (textAreaValue === "") {
     setError(textArea, "Your message is required")
+    isValidate = false
   } else {
     setSuccess(textArea)
   }
+  return isValidate
 }
