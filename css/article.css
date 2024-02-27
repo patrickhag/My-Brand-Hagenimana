@@ -37,6 +37,10 @@ ul li i {
   font-size: 1.3rem;
 }
 
+.main-nav-links {
+  cursor: pointer;
+}
+
 @media (max-width: 48rem) {
   .left-icons ul {
     display: flex;
