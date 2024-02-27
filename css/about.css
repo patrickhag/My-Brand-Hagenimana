@@ -32,8 +32,8 @@
 
 .grid-container-two > div {
   padding: 10px;
-  color: #666666;
-  background-color: rgba(153, 153, 153, 0.2);
+  color: var(--text-dark-grey);
+  background-color: var(--bg-dark-grey);
   border-radius: 7px;
   text-align: center;
 }

@@ -3,17 +3,17 @@ const modalContainer = document.getElementById("modalContainer")
 const leftIconsWrapper = document.getElementById("leftIconsWrapper")
 const modalClose = document.getElementById("modalClose")
 
-function showModal() {
-  modalContainer.classList.add("show")
-  modalContainer.classList.remove("hidden")
+function showModal(element) {
+  element.classList.add("show")
+  element.classList.remove("hidden")
 }
 
-function hideModal() {
-  modalContainer.classList.add("hidden")
-  modalContainer.classList.remove("show")
+function hideModal(element) {
+  element.classList.add("hidden")
+  element.classList.remove("show")
 }
 
-modalClose.addEventListener("click", hideModal())
+modalClose.addEventListener("click", hideModal(modalContainer))
 
 const months = [
   "January",
@@ -67,8 +67,7 @@ const showArticle = id => {
       </div>
   `
 }
-
-window.addEventListener("onload", showArticle(id))
+showArticle(id)
 
 const allUsers = JSON.parse(localStorage.getItem("Users")) || []
 
@@ -80,9 +79,10 @@ const checkWhoLoggedIn = () => {
 const isLoggedIn = checkWhoLoggedIn()
 
 if (isLoggedIn) {
-  mainNavLinks.innerHTML = `
-  <a href=""><span>Logout</span></a>
-  `
+  // mainNavLinks.innerHTML = `
+  // <a href=""><span>Logout</span></a>
+  // <i class="theme-switcher fas fa-moon"></i>
+  // `
   leftIconsWrapper.innerHTML = `
     <li>
     <button class="btn-third" id="likeButton">
@@ -96,5 +96,9 @@ if (isLoggedIn) {
   </li>
   `
   const commentButton = document.getElementById("commentButton")
-  commentButton.addEventListener("click", () => showModal())
+  commentButton.addEventListener("click", () => showModal(modalContainer))
 }
+
+const settings = document.getElementById("settings")
+
+settings.addEventListener("click", console.log(123))
