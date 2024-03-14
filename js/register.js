@@ -4,61 +4,39 @@ const email = document.getElementById("email")
 const password = document.getElementById("password")
 const password2 = document.getElementById("password2")
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault()
 
   const isValid = validateInputs()
-  console.log(isValid)
 
   if (isValid) {
-    const user = {
-      id: Date.now(),
-      username: fullname.value,
+    const userData = {
+      fullName: fullname.value,
       email: email.value.trim(),
-      password: password.value,
-      password2Value: password2.value,
-      isLoggedIn: false,
+      password: password.value.trim(),
     }
-    addUserAndRedirect(user)
+    addUserAndRedirect(userData)
   }
 })
 
-let userData = []
-
-async function hashPassword(password) {
-  const encoder = new TextEncoder()
-  const data = encoder.encode(password)
-
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data)
-  const hashArray = Array.from(new Uint8Array(hashBuffer))
-  const hashedPassword = hashArray
-    .map(byte => byte.toString(16).padStart(2, "0"))
-    .join("")
-
-  return hashedPassword
-}
-
 async function addUserAndRedirect(user) {
-  const hashedPassword = await hashPassword(user.password)
-  const hashedPassword2 = await hashPassword(user.password2)
-  const restructureUser = {
-    id: Date.now(),
-    username: user.username,
-    email: user.email,
-    password: hashedPassword,
-    password2Value: hashedPassword2,
-    isLoggedIn: user.isLoggedIn,
-  }
-
-  const existingUsers = localStorage.getItem("Users")
-  if (existingUsers) {
-    userData = JSON.parse(existingUsers)
-  }
-
-  if (restructureUser) {
-    userData.push(restructureUser)
-    localStorage.setItem("Users", JSON.stringify(userData))
-    alert("Registered successfully!")
-    window.location.href = "login.html"
+  try {
+    const response = await fetch("http://localhost:3001/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || "Failed to login")
+    } else {
+      alert("User registration successfully")
+      window.location.href = "login.html"
+    }
+  } catch (error) {
+    console.error("Error during registering:", error)
+    alert(error.message || "Failed to register. Please try again.")
   }
 }
