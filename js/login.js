@@ -27,15 +27,16 @@ async function loggingIn(user) {
     if (!response.ok) {
       const errorData = await response.json()
       console.log(errorData)
-    } else {
-      alert("Verify your credentials. or sign up instead!")
     }
 
     const { token, userFound } = await response.json()
-
+    localStorage.setItem("token", token)
+    const name = userFound.fullName.split(" ")[1]
     if (userFound.role === "admin") {
+      alert(`Welcome mr ${name}`)
       window.location.href = "admin/index.html"
     } else {
+      alert(`welcome mr/mrs ${name}`)
       window.location.href = "article.html"
     }
   } catch (error) {

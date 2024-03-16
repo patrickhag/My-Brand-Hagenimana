@@ -1,46 +1,47 @@
 const form = document.getElementById("form")
 const title = document.getElementById("title")
 const summary = document.getElementById("summary")
-const bgPicture = document.getElementById("bgPicture")
+const cover = document.getElementById("cover")
 const body = document.getElementById("body")
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault()
-  if (bgPicture.files.length === 0) {
+
+  if (cover.files.length === 0) {
     alert("Please select a file")
     return
   }
-  const reader = new FileReader()
-  const file = bgPicture.files[0]
+  const data = new FormData()
+  data.append("title", title.value)
+  data.append("summary", summary.value)
+  data.append("body", body.value)
+  data.append("image", cover.files[0])
 
-  // console.log(reader)
-
-  reader.onload = function (event) {
-    const article = {
-      id: Date.now(),
-      title: title.value,
-      summary: summary.value,
-      body: body.value,
-      bgPicture: event.target.result,
-    }
-    addArticle(article)
-  }
-
-  reader.readAsDataURL(file)
+  addArticle(data)
 })
 
-let articlesData = []
+const token = localStorage.getItem("token")
 
-const addArticle = article => {
-  const existingArticles = localStorage.getItem("Articles")
-  if (existingArticles) {
-    articlesData = JSON.parse(existingArticles)
-  }
-  articlesData.push(article)
-  localStorage.setItem("Articles", JSON.stringify(articlesData))
+async function addArticle(article) {
+  try {
+    const response = await fetch("http://localhost:3001/api/blog/create-blog", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: article,
+    })
 
-  if (articlesData) {
-    alert("Added succeccesfully!")
-    window.location.href = "/admin/all-articles.html"
+    if (!response.ok) {
+      const errorData = await response.json()
+      alert(errorData.message)
+      console.error(errorData)
+    } else {
+      const { message } = await response.json()
+      alert(message)
+      window.location.href = "all-articles.html"
+    }
+  } catch (error) {
+    console.error(error)
   }
 }

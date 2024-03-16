@@ -1,3 +1,7 @@
 .button-article {
   margin-top: 1rem;
 }
+
+.button-article:hover {
+  color: #51312c;
+}

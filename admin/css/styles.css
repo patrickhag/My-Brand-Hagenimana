@@ -90,6 +90,7 @@ i {
 .container-main {
   margin: 0 3rem 0 14rem;
   padding: 0.7rem;
+  display: grid;
 }
 
 .container-main-buttons {

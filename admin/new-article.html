@@ -15,7 +15,7 @@
   </head>
   <body>
     <aside class="container-aside">
-      <h1 class=" greenish">MyBlog</h1>
+      <h1 class="greenish">MyBlog</h1>
       <nav>
         <ul>
           <li>
@@ -43,7 +43,7 @@
             </a>
           </li>
           <li>
-            <a href="/admin/login.html">
+            <a id="sign-out">
               <i class="fas fa-sign-out-alt fa-sm"></i>
               <span> Sign out</span>
             </a>
@@ -75,12 +75,12 @@
     <section class="container-main">
       <h2 class="blackish text-center">Create an article</h2>
       <div class="create-form-wrapper">
-        <form action="#" id="form">
+        <form action="#" id="form" enctype="multipart/form-data">
           <p><input type="text" placeholder="Title" id="title" /></p>
           <p>
             <input type="text" placeholder="Summary" id="summary" />
           </p>
-          <input type="file" id="bgPicture" />
+          <input type="file" id="cover" />
           <textarea id="body" cols="30" rows="10" placeholder="Body"></textarea>
           <button
             type="submit"
@@ -92,5 +92,6 @@
       </div>
     </section>
     <script src="./js/new-article.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

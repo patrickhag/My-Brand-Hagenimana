@@ -30,13 +30,12 @@ async function addUserAndRedirect(user) {
     })
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.error || "Failed to login")
+      throw new Error(errorData.error || "Failed to register")
     } else {
       alert("User registration successfully")
       window.location.href = "login.html"
     }
   } catch (error) {
     console.error("Error during registering:", error)
-    alert(error.message || "Failed to register. Please try again.")
   }
 }

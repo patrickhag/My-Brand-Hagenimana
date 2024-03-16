@@ -51,9 +51,4 @@ function getTokenFromCookie() {
 }
 
 // Example usage
-const token = getTokenFromCookie()
-if (token) {
-  console.log("Token found:", token)
-} else {
-  console.log("Token not found")
-}
+getTokenFromCookie()

@@ -1,50 +1,68 @@
 document.addEventListener("DOMContentLoaded", () => {
-  displayArticles()
+  retrieveArticlesAndDisplayThem()
 })
+const articlesContainer = document.getElementById("articles-container")
+const loader = document.querySelector(".loader")
+const token = localStorage.getItem("token")
 
-const retrieveArticles = () => {
-  const articlesData = localStorage.getItem("Articles")
-  if (articlesData) {
-    return JSON.parse(articlesData)
-  }
-  return []
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+]
+
+const displayLoader = () => {
+  loader.style.display = "block"
+  articlesContainer.innerHTML = ""
 }
 
-// Display article content on the webpage
-const displayArticles = () => {
-  const articles = retrieveArticles()
-  const articlesContainer = document.getElementById("articles-container")
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ]
+const hideLoader = () => {
+  loader.style.display = "none"
+}
 
-  articles.forEach(article => {
-    const originalDateString = article.id
-    const originalDate = new Date(originalDateString)
-    const day = originalDate.getDate()
-    const monthIndex = originalDate.getMonth()
-    const year = originalDate.getFullYear()
-    const formattedDateString = `${day} ${months[monthIndex]} ${year}`
+const retrieveArticlesAndDisplayThem = async () => {
+  try {
+    displayLoader()
 
-    articlesContainer.innerHTML += `
+    const response = await fetch("http://localhost:3001/api/blog", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    if (!response.ok) {
+      throw new Error("Failed to fetch articles")
+    }
+
+    hideLoader()
+
+    const { data } = await response.json()
+
+    data.forEach((article) => {
+      const originalDateString = article.date
+      const originalDate = new Date(originalDateString)
+      const day = originalDate.getDate()
+      const monthIndex = originalDate.getMonth()
+      const year = originalDate.getFullYear()
+      const formattedDateString = `${day} ${months[monthIndex]} ${year}`
+
+      articlesContainer.innerHTML += `
       <div class="card-wrapper">
           <div class="card-content-wrapper">
             <img
-              src="${article.bgPicture}"
-              alt="Image shows athletes"
+              src="http://localhost:3001/${article.cover}"
+              alt="Image goes here"
             />
-            <span class="text-space">CREATED ON ${formattedDateString}</span>
+            <p class="text-space">CREATED ON ${formattedDateString}</p>
             <p class="margin-top-bottom">
               &nbsp;${article.title}
             </p>
@@ -52,10 +70,10 @@ const displayArticles = () => {
             <div class="card-wrapper-button">
               <button class="">Read article</button>
               <div>
-                <button onClick="navigateToEditForm(${article.id})">
+                <button onClick="navigateToEditForm('${article._id}')">
                   <i class="fas fa-edit fa-edit-alt"></i>
                 </button>
-                <button onClick="deleteArticle(${article.id})">
+                <button onClick="deleteArticle('${article._id}')">
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </div>
@@ -63,28 +81,41 @@ const displayArticles = () => {
           </div>
         </div>
       `
-  })
-}
-
-const deleteArticle = id => {
-  const articles = retrieveArticles()
-  const indexToDelete = articles.findIndex(article => article.id === id)
-
-  if (indexToDelete === -1) {
-    console.error("Article not found")
-    return
-  }
-  const confirmation = window.confirm(
-    `Are you sure you want to delete the article "${articles[indexToDelete].title}"?`
-  )
-
-  if (confirmation) {
-    const updatedArticles = articles.filter(article => article.id !== id)
-    localStorage.setItem("Articles", JSON.stringify(updatedArticles))
-    window.location.href = "/admin/all-articles.html"
+    })
+  } catch (error) {
+    console.error(error)
   }
 }
 
-const navigateToEditForm = id => {
+const deleteArticle = async (id) => {
+  try {
+    const confirmation = window.confirm(
+      `Are you sure you want to delete this article?`
+    )
+    if (confirmation) {
+      const response = await fetch(
+        `http://localhost:3001/api/blog/delete-blog/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+
+      if (!response.ok) {
+        throw new Error("Failed to delete article")
+      }
+
+      console.log("Article deleted successfully")
+
+      retrieveArticlesAndDisplayThem()
+    }
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+const navigateToEditForm = (id) => {
   window.location.href = `/admin/edit-article.html?id=${id}`
 }
