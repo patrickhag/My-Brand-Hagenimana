@@ -1,4 +1,4 @@
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   validateInputs()
 })
 
@@ -11,7 +11,7 @@ const setError = (element, message) => {
   inputControl.classList.remove("success")
 }
 
-const setSuccess = element => {
+const setSuccess = (element) => {
   const inputControl = element.parentElement
   const errorDisplay = inputControl.querySelector(".error")
 
@@ -20,13 +20,13 @@ const setSuccess = element => {
   inputControl.classList.remove("error")
 }
 
-const isValidEmail = email => {
+const isValidEmail = (email) => {
   const regex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return regex.test(String(email).toLowerCase())
 }
 
-const isValidPhoneNumber = phoneNumber => {
+const isValidPhoneNumber = (phoneNumber) => {
   const regex = /^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/
   return regex.test(phoneNumber)
 }

@@ -28,11 +28,13 @@
           </ul>
         </nav>
         <div id="main-nav-links" class="main-nav-links">
-          <!-- <a href="/login.html"><span>Login</span></a> -->
+          <a href="/login.html"><span>Login</span></a>
           <i class="theme-switcher fas fa-moon"></i>
         </div>
       </div>
     </header>
+    <div class="loader"></div>
+
     <div class="left-icons">
       <ul id="leftIconsWrapper">
         <li>
@@ -51,82 +53,34 @@
       <div id="article-container"></div>
       <div class="modal-content hidden" id="modalContainer">
         <div class="modal-close">
-          <button id="modalClose" class="btn-third">
+          <button class="modal-close" id="modalClose">
             <i class="fas fa-times fa-lg"></i>
           </button>
         </div>
-
-        <nav class="modal-user-section">
-          <div>
-            <img
-              src="./images/yyny4b-min.jpg"
-              alt=""
-              width="40"
-              height="40"
-              class="modal-user-image"
-            />
-            <!-- <div class="bottom-border-line"></div> -->
-          </div>
-          <div>
-            <div class="modal-name-headers">
-              <h5 class="">Peter doe</h5>
-              <span class="">7 days ago</span>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              possimus repellat officia excepturi exercitationem blanditiis qui
-              cum, perferendis at quod ad laborum consequuntur soluta ratione id
-              modi, praesentium aliquid tempore aperiam! Quas iusto recusandae
-              quis reprehenderit nesciunt excepturi quidem fuga?
-            </p>
-          </div>
-        </nav>
-        <nav class="modal-user-section">
-          <div>
-            <img
-              src="./images/yyny4b-min.jpg"
-              alt=""
-              width="40"
-              height="40"
-              class="modal-user-image"
-            />
-            <!-- <div class="bottom-border-line"></div> -->
-          </div>
-          <div>
-            <div class="modal-name-headers">
-              <h5 class="">Peter doe</h5>
-              <span class="">7 days ago</span>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              possimus repellat officia excepturi exercitationem blanditiis qui
-              cum, perferendis at quod ad laborum consequuntur soluta ratione id
-              modi, praesentium aliquid tempore aperiam! Quas iusto recusandae
-              quis reprehenderit nesciunt excepturi quidem fuga?
-            </p>
-          </div>
-        </nav>
+        <div id="comment-container"></div>
         <p>
           <textarea
             name=""
-            id=""
+            id="phrase"
             cols="30"
             rows="10"
             placeholder="Leave a comment"
           ></textarea>
         </p>
         <p>
-          <button class="">Post comment</button>
-          <button class="">Cancel</button>
+          <button class="btn btn-comment" id="post-comment">
+            Post comment
+          </button>
+          <button class="btn btn-comment" id="modalClose">Cancel</button>
         </p>
       </div>
     </section>
     <footer>
       <ul>
-        <li><a class="footer-link" href="#home">Home&nbsp;|&nbsp;</a></li>
-        <li><a class="footer-link" href="#about">About&nbsp;|&nbsp;</a></li>
+        <li><a class="footer-link" href="#home">Home | </a></li>
+        <li><a class="footer-link" href="#about">About | </a></li>
         <li>
-          <a class="footer-link" href="#projects">Projects&nbsp;|&nbsp;</a>
+          <a class="footer-link" href="#projects">Projects | </a>
         </li>
         <li><a class="footer-link" href="#contact">Contact</a></li>
       </ul>

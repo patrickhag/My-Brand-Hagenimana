@@ -1,7 +1,6 @@
 .modal-content {
-  /* width: 70%; */
   margin: 0 auto;
-  background-color: #fcfcfc;
+  background-color: var(--background);
   padding: 1rem 1.5rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(167, 164, 164, 0.2),
@@ -26,10 +25,9 @@
 
 .btn-third {
   color: #9c9c9c;
-  background-color: #fcfcfc;
 }
 .btn-third:hover {
-  color: #1e1d1c;
+  color: #804eea;
 }
 
 .modal-user-image {
@@ -46,6 +44,25 @@
 }
 
 .modal-name-headers span {
-  font-size: 12px;
+  font-size: 15px;
   color: #5b5a60;
+}
+
+.btn-comment:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.modal-close {
+  background-color: var(--background);
+}
+
+.modal-close > i {
+  color: var(--text-white);
+}
+
+.profile > span {
+  border: 3px solid rgb(221, 240, 240);
+  background-color: var(--background-project);
+  border-radius: 50%;
+  padding: 0.25rem 0.4rem;
 }

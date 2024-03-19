@@ -1,8 +1,8 @@
 const form = document.getElementById("form")
 const title = document.getElementById("title")
 const summary = document.getElementById("summary")
+const tools = document.getElementById("tools")
 const cover = document.getElementById("cover")
-const body = document.getElementById("body")
 
 form.addEventListener("submit", (e) => {
   e.preventDefault()
@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
   const data = new FormData()
   data.append("title", title.value)
   data.append("summary", summary.value)
-  data.append("body", body.value)
+  data.append("tools", tools.value)
   data.append("image", cover.files[0])
 
   addArticle(data)
@@ -25,7 +25,7 @@ const token = localStorage.getItem("token")
 async function addArticle(article) {
   try {
     const response = await fetch(
-      "https://my-brand-api-x9fd.onrender.com/api/blog/create-blog",
+      "https://my-brand-api-x9fd.onrender.com/api/projects/create-project",
       {
         method: "POST",
         headers: {
@@ -42,7 +42,7 @@ async function addArticle(article) {
     } else {
       const { message } = await response.json()
       alert(message)
-      window.location.href = "all-articles.html"
+      window.location.href = "projects.html"
     }
   } catch (error) {
     console.error(error)

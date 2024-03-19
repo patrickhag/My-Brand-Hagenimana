@@ -49,9 +49,6 @@ ul li i {
     left: 40%;
     z-index: 1000;
     top: 80%;
-    background-color: #fff;
-  }
-  ul li:nth-child(1) {
-    padding-right: 2rem;
+    background-color: var(--background);
   }
 }

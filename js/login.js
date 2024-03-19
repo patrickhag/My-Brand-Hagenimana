@@ -16,13 +16,16 @@ form.addEventListener("submit", (e) => {
 
 async function loggingIn(user) {
   try {
-    const response = await fetch("http://localhost:3001/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
+    const response = await fetch(
+      "https://my-brand-api-x9fd.onrender.com/api/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    )
 
     if (!response.ok) {
       const errorData = await response.json()
@@ -37,7 +40,7 @@ async function loggingIn(user) {
       window.location.href = "admin/index.html"
     } else {
       alert(`welcome mr/mrs ${name}`)
-      window.location.href = "article.html"
+      window.location.href = "blog.html"
     }
   } catch (error) {
     console.error(error)

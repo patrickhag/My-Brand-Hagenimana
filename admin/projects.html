@@ -9,9 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/new-article.css" />
+    <link rel="stylesheet" href="./css/all-articles.css" />
   </head>
   <body>
     <aside class="container-aside">
@@ -73,31 +72,19 @@
             ></path>
           </svg>
         </button>
-        <button class="greenish button-globe button-globe-shared new-article">
-          New article
+        <button class="button-globe button-globe-shared new-article">
+          <a href="./new-project.html" class="greenish">New project</a>
         </button>
       </div>
     </section>
     <section class="container-main">
-      <h2 class="blackish text-center">Create an article</h2>
-      <div class="create-form-wrapper">
-        <form action="#" id="form" enctype="multipart/form-data">
-          <p><input type="text" placeholder="Title" id="title" /></p>
-          <p>
-            <input type="text" placeholder="Summary" id="summary" />
-          </p>
-          <input type="file" id="cover" />
-          <textarea id="body" cols="30" rows="10" placeholder="Body"></textarea>
-          <button
-            type="submit"
-            class="button-globe button-globe-shared button-article"
-          >
-            Create article
-          </button>
-        </form>
-      </div>
+      <h2 class="blackish">Projects</h2>
+
+      <div class="loader"></div>
+
+      <div class="articles-container" id="articles-container"></div>
     </section>
-    <script src="./js/new-article.js"></script>
+    <script src="./js/projects.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

@@ -21,13 +21,16 @@ form.addEventListener("submit", (e) => {
 
 async function addUserAndRedirect(user) {
   try {
-    const response = await fetch("http://localhost:3001/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
+    const response = await fetch(
+      "https://my-brand-api-x9fd.onrender.com/api/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    )
     if (!response.ok) {
       const errorData = await response.json()
       throw new Error(errorData.error || "Failed to register")

@@ -29,16 +29,28 @@ const hideLoader = () => {
   loader.style.display = "none"
 }
 
+const formatDateString = (date) => {
+  const originalDateString = date
+  const originalDate = new Date(originalDateString)
+  const day = originalDate.getDate()
+  const monthIndex = originalDate.getMonth()
+  const year = originalDate.getFullYear()
+  return `${months[monthIndex]} ${day}, ${year}`
+}
+
 const retrieveArticlesAndDisplayThem = async () => {
   try {
     displayLoader()
 
-    const response = await fetch("http://localhost:3001/api/blog", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    const response = await fetch(
+      "https://my-brand-api-x9fd.onrender.com/api/blog",
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
     if (!response.ok) {
       throw new Error("Failed to fetch articles")
     }
@@ -48,21 +60,16 @@ const retrieveArticlesAndDisplayThem = async () => {
     const { data } = await response.json()
 
     data.forEach((article) => {
-      const originalDateString = article.date
-      const originalDate = new Date(originalDateString)
-      const day = originalDate.getDate()
-      const monthIndex = originalDate.getMonth()
-      const year = originalDate.getFullYear()
-      const formattedDateString = `${day} ${months[monthIndex]} ${year}`
-
       articlesContainer.innerHTML += `
       <div class="card-wrapper">
           <div class="card-content-wrapper">
             <img
-              src="http://localhost:3001/${article.cover}"
+              src="https://my-brand-api-x9fd.onrender.com/${article.cover}"
               alt="Image goes here"
             />
-            <p class="text-space">CREATED ON ${formattedDateString}</p>
+            <p class="text-space">CREATED ON ${formatDateString(
+              article.date
+            )}</p>
             <p class="margin-top-bottom">
               &nbsp;${article.title}
             </p>
@@ -94,7 +101,7 @@ const deleteArticle = async (id) => {
     )
     if (confirmation) {
       const response = await fetch(
-        `http://localhost:3001/api/blog/delete-blog/${id}`,
+        `https://my-brand-api-x9fd.onrender.com/api/blog/delete-blog/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -106,8 +113,6 @@ const deleteArticle = async (id) => {
       if (!response.ok) {
         throw new Error("Failed to delete article")
       }
-
-      console.log("Article deleted successfully")
 
       retrieveArticlesAndDisplayThem()
     }

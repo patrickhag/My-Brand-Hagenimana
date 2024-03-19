@@ -10,25 +10,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const response = await fetch(
-      `https://my-brand-api-x9fd.onrender.com/api/blog/${id}`,
+      `https://my-brand-api-x9fd.onrender.com/api/projects/${id}`,
       {
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
       }
     )
 
     if (!response.ok) {
-      throw new Error("Failed to fetch article for editing")
+      throw new Error("Failed to fetch project for editing")
     }
 
     const { data } = await response.json()
-    const articleToUpdate = data
-    console.log(articleToUpdate)
-    document.getElementById("title").value = articleToUpdate.title
-    document.getElementById("summary").value = articleToUpdate.summary
-    document.getElementById("body").value = articleToUpdate.body
+    const projectToUpdate = data
+
+    document.getElementById("title").value = projectToUpdate.title
+    document.getElementById("summary").value = projectToUpdate.summary
+    document.getElementById("tools").value = projectToUpdate.tools
   } catch (error) {
     console.error(error)
   }
@@ -39,18 +36,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const title = document.getElementById("title")
     const summary = document.getElementById("summary")
+    const tools = document.getElementById("tools")
     const cover = document.getElementById("cover")
-    const body = document.getElementById("body")
 
     const data = new FormData()
     data.append("title", title.value)
     data.append("summary", summary.value)
-    data.append("body", body.value)
+    data.append("tools", tools.value)
     data.append("image", cover.files[0])
 
     try {
       const response = await fetch(
-        `https://my-brand-api-x9fd.onrender.com/api/blog/update-blog/${id}`,
+        `https://my-brand-api-x9fd.onrender.com/api/projects/update-project/${id}`,
         {
           method: "PUT",
           headers: {
@@ -61,10 +58,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       )
       const { message } = await response.json()
 
-      if (!response.ok) {
+      if (response.ok) {
         alert(message)
       }
-      window.location.href = "all-articles.html"
+      window.location.href = "projects.html"
     } catch (error) {
       console.error(error)
     }

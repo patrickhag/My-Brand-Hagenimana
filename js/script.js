@@ -25,7 +25,7 @@ Themeswitcher.forEach((elem) => {
     }
   })
 })
-//HANDLING THE BUTTON FOR UPDATING THE STATUS OF THE MODE SWITCHING BUTTON
+
 onload = () => {
   mode(localStorage.getItem("colorMode"))
   if (localStorage.getItem("colorMode") === "dark") {
@@ -36,19 +36,9 @@ onload = () => {
   }
 }
 
-function getTokenFromCookie() {
-  const cookies = document.cookie.split(";")
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim()
-    // Check if the cookie starts with "token="
-    if (cookie.startsWith("token=")) {
-      // Extract and return the token value
-      return cookie.substring("token=".length)
-    }
-  }
-  // If token cookie is not found, return null or handle it as per your requirement
-  return null
-}
+const signOut = document.getElementById("sign-out")
 
-// Example usage
-getTokenFromCookie()
+signOut.addEventListener("click", () => {
+  window.location.href = "login.html/"
+  localStorage.removeItem("token")
+})
