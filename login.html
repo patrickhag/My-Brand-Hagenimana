@@ -11,74 +11,20 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/login.css" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body class="background-without-img">
-    <header class="main-header">
-      <div class="header-content">
-        <div class="main-header-logo">
-          <a href="./index.html">PH</a>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="#projects">Web dev</a></li>
-            <li><a href="#about">Data science</a></li>
-            <li><a href="./#contact">Artificial intelligence</a></li>
-          </ul>
-        </nav>
-        <div id="main-nav-links" class="main-nav-links">
-          <!-- <a href="/login.html"><span>Login</span></a> -->
-          <i class="theme-switcher fas fa-moon"></i>
-        </div>
-      </div>
-    </header>
-    <section class="main-container-login">
-      <div class="login-form-wrapper">
-        <form action="/" id="form">
-          <div class="center margin-bottom">
-            Login and get to like articles
-            <hr class="vertical-line" />
-          </div>
-          <div class="input-control">
-            <input type="email" placeholder="🙎‍♂️ Email" id="email" />
-            <div class="error"></div>
-          </div>
-          <div class="input-control">
-            <input type="password" placeholder="🔒 Password" id="password" />
-            <div class="error"></div>
-          </div>
-          <button class="btn btn-secondary" id="signUpButton">Sign in</button>
-          <p>
-            <span
-              ><b>Or</b>
-              <a href="./register.html">sign up now!</a>
-            </span>
-          </p>
-        </form>
-      </div>
-    </section>
-    <footer>
-      <ul>
-        <li><a class="footer-link" href="#home">Home | </a></li>
-        <li><a class="footer-link" href="#about">About | </a></li>
-        <li><a class="footer-link" href="#projects">Projects | </a></li>
-        <li><a class="footer-link" href="#contact">Contact</a></li>
-      </ul>
-      <p>
-        <span><i class="fab fa-twitter"></i> &#183;</span>
-        <span><i class="fab fa-linkedin"></i> &#183;</span>
-        <span><i class="fas fa-envelope-open"></i></span>
-      </p>
-      <p>
-        &copy; Copyright 2024. Created by
-        <span class="footer-name">
-          <a class="footer-link" href="./index.html">
-            Patrick Hagenimana</a
-          ></span
-        >
-      </p>
-    </footer>
-    <script src="./js/login.js"></script>
-    <script src="./js/validate/login-validate.js"></script>
-    <script src="./js/script.js"></script>
+    <div id="root"></div>
+    <script src="./js/login.jsx" type="text/babel"></script>
+    <!-- <script src="./js/validate/login-validate.js"></script>
+    <script src="./js/script.js"></script> -->
   </body>
 </html>

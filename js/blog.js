@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const articlesContainer = document.getElementById("articles-container")
 const loader = document.querySelector(".loader")
+const signOut = document.getElementById("sign-out")
+
+signOut.addEventListener("click", () => {
+  window.location.href = "login.html/"
+  localStorage.removeItem("token")
+})
 
 const displayLoader = () => {
   loader.style.display = "block"
