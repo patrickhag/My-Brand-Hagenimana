@@ -58,8 +58,16 @@ body {
 }
 
 button {
-  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
   cursor: pointer;
+  white-space: nowrap;
+  border: none;
 }
 
 li {
@@ -67,6 +75,7 @@ li {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .text-grey {
@@ -91,7 +100,7 @@ a {
   top: 0;
 }
 
-.fa-bars {
+.menu-button {
   display: none;
 }
 
@@ -234,10 +243,81 @@ form button {
   }
 }
 
+.navToggle {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.small-device-links > ul {
+  padding: 1rem 1.5rem;
+  margin-top: 0;
+}
+
+.small-device-links > ul > li > a,
+i {
+  width: 100%;
+  cursor: pointer;
+  padding: 5px;
+  display: block;
+}
+
+.small-device-links > ul > li:not(:last-child) {
+  list-style: none;
+  margin-bottom: 1rem;
+  color: var(--text-white);
+}
+
+.small-device-links > ul > li:hover {
+  background-color: azure;
+  color: var(--text-purple);
+}
+
+@media (min-width: 37.5rem) {
+  .small-device-links {
+    display: none;
+  }
+}
+
 @media (max-width: 37.5rem) {
   .project-wrapper {
     flex-direction: column;
     align-items: start;
+  }
+  .main-nav,
+  .main-nav-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 40.25rem) {
+  .main-nav,
+  .main-nav-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+  .theme-switcher {
+    margin-left: 0;
   }
 }
 
@@ -265,6 +345,11 @@ footer ul li {
 
 .footer-link {
   color: #fff;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
 }
 
 .background-with-img {

@@ -35,3 +35,11 @@ onload = () => {
     })
   }
 }
+
+const barsEl = document.getElementById("bars")
+const smallDeviceLinksEl = document.querySelector(".small-device-links")
+const linksEl = document.querySelector(".links li")
+
+barsEl.addEventListener("click", () =>
+  smallDeviceLinksEl.classList.toggle("hide")
+)

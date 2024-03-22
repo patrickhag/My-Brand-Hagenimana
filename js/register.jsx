@@ -19,8 +19,39 @@ const Header = () => {
           </ul>
         </nav>
         <div id='main-nav-links' className='main-nav-links'>
-          <i className='theme-switcher fas fa-moon'></i>
+          <a href='/login.html'>
+            <span>Login</span>
+          </a>
+          <button>
+            <i className='theme-switcher fas fa-moon fa-lg'></i>
+          </button>
         </div>
+        <div className='menu-button'>
+          <i className='navToggle fas fa-bars fa-lg' id='bars'></i>
+        </div>
+      </div>
+      <div className='small-device-links hide'>
+        <ul className='links'>
+          <li>
+            <a href='#projects'>Web dev</a>
+          </li>
+          <li>
+            <a href='#about'>Data science</a>
+          </li>
+          <li>
+            <a href='./#contact'>Artificial intelligence</a>
+          </li>
+          <li>
+            <a href='/login.html'>
+              <span>Login</span>
+            </a>
+          </li>
+          <li>
+            <button>
+              <i className='theme-switcher fas fa-moon fa-lg'></i>
+            </button>
+          </li>
+        </ul>
       </div>
     </header>
   )
@@ -146,11 +177,13 @@ const Footer = () => {
       </ul>
       <p>
         <span>
-          <i className='fab fa-twitter'></i> &#183;
-        </span>
+          <i className='fab fa-twitter'></i>
+        </span>{" "}
+        &#183;
         <span>
-          <i className='fab fa-linkedin'></i> &#183;
+          <i className='fab fa-linkedin'></i>
         </span>
+        &#183;
         <span>
           <i className='fas fa-envelope-open'></i>
         </span>

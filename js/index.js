@@ -67,7 +67,6 @@ async function grabProjects() {
     )
 
     const { data } = await response.json()
-    console.log(data)
     data.forEach((project) => {
       projectContainer.innerHTML += `
       <div class="project-wrapper">

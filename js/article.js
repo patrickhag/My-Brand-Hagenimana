@@ -2,11 +2,12 @@ const loader = document.querySelector(".loader")
 
 const signOut = document.getElementById("sign-out")
 
-signOut.addEventListener("click", () => {
-  window.location.href = "login.html/"
-  localStorage.removeItem("token")
-})
-
+if (signOut) {
+  signOut.addEventListener("click", () => {
+    window.location.href = "login.html/"
+    localStorage.removeItem("token")
+  })
+}
 const months = [
   "January",
   "February",
