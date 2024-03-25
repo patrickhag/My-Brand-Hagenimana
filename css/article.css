@@ -41,6 +41,14 @@ ul li i {
   cursor: pointer;
 }
 
+blockquote {
+  border-left: 5px solid rgb(226, 226, 226);
+}
+
+blockquote > p {
+  margin-left: 1rem;
+}
+
 @media (max-width: 48rem) {
   .left-icons ul {
     display: flex;

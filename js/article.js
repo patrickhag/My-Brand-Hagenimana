@@ -76,9 +76,9 @@ const showArticle = async () => {
                 alt="Articles's background"
                 class="articles-cover"
             /></picture>
-            <p>
+            <div>
             ${article.body}
-            </p>
+            </div>
           </div>
         </div>
     `
@@ -208,7 +208,6 @@ const grabAllComments = async () => {
     }
     hideLoader()
     const { data } = await response.json()
-    console.log(data)
     data.forEach((comment) => {
       commentContainer.innerHTML += `
       <nav class="modal-user-section">
